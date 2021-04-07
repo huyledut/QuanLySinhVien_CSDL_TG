@@ -1,0 +1,11 @@
+D:\C#\BT-QUAN-LY-SINH-VIEN\bin\Debug\BT-QUAN-LY-SINH-VIEN.exe.config
+D:\C#\BT-QUAN-LY-SINH-VIEN\bin\Debug\BT-QUAN-LY-SINH-VIEN.exe
+D:\C#\BT-QUAN-LY-SINH-VIEN\bin\Debug\BT-QUAN-LY-SINH-VIEN.pdb
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT-QUAN-LY-SINH-VIEN.csprojAssemblyReference.cache
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT_QUAN_LY_SINH_VIEN.Properties.Resources.resources
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT-QUAN-LY-SINH-VIEN.csproj.GenerateResource.cache
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT-QUAN-LY-SINH-VIEN.csproj.CoreCompileInputs.cache
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT-QUAN-LY-SINH-VIEN.exe
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT-QUAN-LY-SINH-VIEN.pdb
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT_QUAN_LY_SINH_VIEN.Form1.resources
+D:\C#\BT-QUAN-LY-SINH-VIEN\obj\Debug\BT_QUAN_LY_SINH_VIEN.Form2.resources
