@@ -49,27 +49,49 @@ namespace BT_QUAN_LY_SINH_VIEN
             dataGridView1.DataSource = CSDL_TG.Instance.GetListSV(index);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = CSDL_TG.Instance.searchSV(textBox1.Text);
-        }
+        //private void textBox1_TextChanged(object sender, EventArgs e)
+        //{
+        //    dataGridView1.DataSource = null;
+        //    dataGridView1.DataSource = CSDL_TG.Instance.searchSV(textBox1.Text);
+        //}
 
         private void btAdd_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            //f2.Option("", "add");
             f2.ShowDialog();
-            f2.Hide();
+            this.Hide();
         }
 
         private void btEdit_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             string mssv = dataGridView1.CurrentRow.Cells["MSSV"].Value.ToString();
-            f2.Option(mssv, "edit");
+            f2.Option(mssv, "edit");            
             f2.ShowDialog();
-            f2.Hide();
+            this.Hide();
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null) MessageBox.Show("Danh sach sinh vien rong!", "Thong bao");
+            else 
+            {
+                string mssv = dataGridView1.CurrentRow.Cells["MSSV"].Value.ToString();
+                CSDL_TG.Instance.deleteSV(mssv);
+                dataGridView1.DataSource = CSDL_TG.Instance.GetListSV(0);
+            }
+        }
+
+        private void btTimkiem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = CSDL_TG.Instance.searchSV(textBox1.Text);
+        }
+
+        private void btSort_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(cbboxSort.SelectedItem.ToString());
         }
     }
 }

@@ -64,9 +64,9 @@ namespace BT_QUAN_LY_SINH_VIEN
             {
                 addFUNC();
             }
-            Form1 f1 = new Form1();
-            f1.Show();
             this.Close();
+            Form1 f1 = new Form1();
+            f1.Show();            
         }
         private void addFUNC()
         {
@@ -75,9 +75,6 @@ namespace BT_QUAN_LY_SINH_VIEN
             if (CSDL_TG.Instance.addSV(s))
             {
                 MessageBox.Show("Thêm sinh viên thành công", "Thông báo");
-                Form1 f1 = new Form1();
-                f1.Show();
-                this.Dispose();
             }
             else
             {
@@ -104,6 +101,13 @@ namespace BT_QUAN_LY_SINH_VIEN
                 showEdit();
             }
             else tbMSSV.Enabled = true;
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+            this.Close();
         }
     }
 }

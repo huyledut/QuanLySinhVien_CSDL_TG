@@ -41,6 +41,7 @@ namespace BT_QUAN_LY_SINH_VIEN
             this.tbHoTen = new System.Windows.Forms.TextBox();
             this.tbMSSV = new System.Windows.Forms.TextBox();
             this.btOK = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -161,11 +162,22 @@ namespace BT_QUAN_LY_SINH_VIEN
             this.btOK.UseVisualStyleBackColor = true;
             this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
+            // btCancel
+            // 
+            this.btCancel.Location = new System.Drawing.Point(474, 318);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(123, 29);
+            this.btCancel.TabIndex = 2;
+            this.btCancel.Text = "Cancel";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 358);
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form2";
@@ -193,5 +205,6 @@ namespace BT_QUAN_LY_SINH_VIEN
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btOK;
+        private System.Windows.Forms.Button btCancel;
     }
 }

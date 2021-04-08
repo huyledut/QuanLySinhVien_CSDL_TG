@@ -115,5 +115,74 @@ namespace BT_QUAN_LY_SINH_VIEN
                 if (mssv == i.MSSV) s = i;
             return s;
         }
+
+        public void deleteSV(string mssv)
+        {
+            List<SV> DS = new List<SV>();
+            DS = GetListSV(0);
+            int index = 0;
+            foreach(SV i in DS)
+            {
+                if (mssv != i.MSSV) index++;
+                else break;
+            }
+            DS.RemoveAt(index);
+            CSDL.Instance.setDTSV(DS);
+        }
+        
+        public List<SV> listSVbySort(string indexOption)
+        {
+            List<SV> DS = new List<SV>();
+            DS = GetListSV(0);
+            for(int i=0; i < DS.Count-1;i++)
+                for(int j=i+1; j < DS.Count; j++)
+                {
+                    switch(indexOption)
+                    {
+                        case "MSSV":
+                            if (String.Compare(DS[i].MSSV.ToString(), DS[j].MSSV.ToString()) < 0)
+                            {
+                                SV tmp = DS[i];
+                                DS[i] = DS[j];
+                                DS[j] = tmp;
+                            }
+                            break;
+                        case "HoTen":
+                            if (String.Compare(DS[i].HoTen.ToString(), DS[j].HoTen.ToString()) < 0)
+                            {
+                                SV tmp = DS[i];
+                                DS[i] = DS[j];
+                                DS[j] = tmp;
+                            }
+                            break;
+                        case "NgaySinh":
+                            if (String.Compare(DS[i].NgaySinh.ToString(), DS[j].NgaySinh.ToString()) < 0)
+                            {
+                                SV tmp = DS[i];
+                                DS[i] = DS[j];
+                                DS[j] = tmp;
+                            }
+                            break;
+                        case "GioiTinh":
+                            if (String.Compare(DS[i].GioiTinh.ToString(), DS[j].GioiTinh.ToString()) < 0)
+                            {
+                                SV tmp = DS[i];
+                                DS[i] = DS[j];
+                                DS[j] = tmp;
+                            }
+                            break;
+                        case "ID_Lop":
+                            if (DS[i].ID_Lop < DS[j].ID_Lop)
+                            {
+                                SV tmp = DS[i];
+                                DS[i]=DS[j];
+                                DS[j] = tmp;
+                            }
+                            break;
+                    }
+                            
+                }
+            return DS;
+        }
     }
 }
