@@ -85,6 +85,7 @@ namespace BT_QUAN_LY_SINH_VIEN
 
         private void btTimkiem_Click(object sender, EventArgs e)
         {
+            cbboxLSH.SelectedIndex = 0;
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = CSDL_TG.Instance.searchSV(textBox1.Text);
         }
@@ -94,13 +95,31 @@ namespace BT_QUAN_LY_SINH_VIEN
             if (cbboxSort.SelectedItem != null)
             {
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(cbboxSort.SelectedItem.ToString());
+                int indexLop = ((CBBox)cbboxLSH.SelectedItem).Value;
+                string Menu = cbboxSort.Text;
+                switch(Menu)
+                {
+                    case "MSSV":
+                        dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(SV.isCompareMSSV, indexLop);
+                        break;
+                    case "HoTen":
+                        dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(SV.isCompareHoTen, indexLop);
+                        break;
+                    case "ID_Lop":
+                        dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(SV.isCompareID_Lop, indexLop);
+                        break;
+                    case "NgaySinh":
+                        dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(SV.isCompareNgaySinh, indexLop);
+                        break;
+                    case "GioiTinh":
+                        dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(SV.isCompareGioiTinh, indexLop);
+                        break;
+                }
             }
             else
             {
-                MessageBox.Show("Ban chua chon phuong thuc sap xep!","Thong bao");
+                MessageBox.Show("Phuong thuc sap xep khong hop le!","Thong bao");
             }
-            cbboxLSH.SelectedIndex = 0;
         }
     }
 }
