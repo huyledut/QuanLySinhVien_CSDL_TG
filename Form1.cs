@@ -58,6 +58,7 @@ namespace BT_QUAN_LY_SINH_VIEN
         private void btAdd_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
+            f2.Option("", "add");
             f2.ShowDialog();
             this.Hide();
         }
@@ -90,8 +91,16 @@ namespace BT_QUAN_LY_SINH_VIEN
 
         private void btSort_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(cbboxSort.SelectedItem.ToString());
+            if (cbboxSort.SelectedItem != null)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = CSDL_TG.Instance.listSVbySort(cbboxSort.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Ban chua chon phuong thuc sap xep!","Thong bao");
+            }
+            cbboxLSH.SelectedIndex = 0;
         }
     }
 }

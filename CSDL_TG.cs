@@ -68,12 +68,12 @@ namespace BT_QUAN_LY_SINH_VIEN
             return DSLop;
         }
 
-        public List<SV> searchSV(string NameSV)
+        public List<SV> searchSV(string textSearch)
         {
             List<SV> DS = new List<SV>();
             foreach(DataRow i in CSDL.Instance.DTSV.Rows)
             {
-                if (i["HoTen"].ToString() == NameSV || i["HoTen"].ToString().Contains(NameSV)==true)
+                if (i["HoTen"].ToString().Contains(textSearch) || i["MSSV"].ToString().Contains(textSearch) )
                     DS.Add(GetSV(i));
             }
             return DS;

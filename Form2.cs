@@ -56,17 +56,24 @@ namespace BT_QUAN_LY_SINH_VIEN
 
         private void btOK_Click(object sender, EventArgs e)
         {
-            if(NameOption=="edit")
+            if(tbHoTen.Text != "" && tbMSSV.Text != "")
             {
-                CSDL_TG.Instance.editSV(getInform());
-            }   
+                if (NameOption == "edit")
+                {
+                   CSDL_TG.Instance.editSV(getInform());
+                }
+                else
+                {
+                    addFUNC();
+                }
+                this.Close();
+                Form1 f1 = new Form1();
+                f1.Show();
+            }
             else
             {
-                addFUNC();
+                MessageBox.Show("Mời bạn nhập đầy đủ thông tin!!");
             }
-            this.Close();
-            Form1 f1 = new Form1();
-            f1.Show();            
         }
         private void addFUNC()
         {
